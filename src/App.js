@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import TopMenu from './components/elements/TopMenu.jsx';
 import Main from './components/pages/Main';
@@ -13,11 +13,14 @@ class App extends Component {
 		return (
 			<div className="App">
 				<TopMenu />
-				<Route exact path="/" component={Main} />
-				<Route path="/news" component={News} />
-				<Route path="/profile" component={Profile} />
-				<Route path="/login" component={Login} />
-				<Route component={Notfound} />
+
+				<Switch>
+					<Route exact path="/" component={Main} />
+					<Route path="/news" component={News} />
+					<Route path="/profile" component={Profile} />
+					<Route path="/login" component={Login} />
+					<Route component={Notfound} />
+				</Switch>
 			</div>
 		);
 	}
