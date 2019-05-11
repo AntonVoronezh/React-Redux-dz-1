@@ -6,10 +6,10 @@ import WrapNavLink from './WrapNavLink';
 const TopMenu = () => {
 	return (
 		<Menu>
-			<Menu.Item content="На главную" as={WrapNavLink} exact to="/" />
-			<Menu.Item content="Новости" as={WrapNavLink} to="/news" />
-			<Menu.Item content="Профиль" as={WrapNavLink} to="/profile" />
-			<Menu.Item content="Логин" as={WrapNavLink} to="/login" position="right" />
+			<WrapNavLink content="На главную" exact to="/" />
+			<WrapNavLink content="Новости" to="/news" />
+			<WrapNavLink content="Профиль" to="/profile" />
+			<WrapNavLink content="Логин" to="/login" position="right" />
 		</Menu>
 	);
 };

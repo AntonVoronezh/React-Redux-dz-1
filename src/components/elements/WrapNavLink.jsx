@@ -1,6 +1,5 @@
 import React from 'react';
+import { Menu } from 'semantic-ui-react';
 import { NavLink } from 'react-router-dom';
 
-const WrapNavLink = () => <WrapNavLink as={NavLink} activeClassName="active" />;
-
-export default WrapNavLink;
+export default ({ ...rest }) => <Menu.Item as={NavLink} activeClassName="active" {...rest} />;
