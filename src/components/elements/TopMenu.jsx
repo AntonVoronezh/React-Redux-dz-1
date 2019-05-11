@@ -1,15 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Menu } from 'semantic-ui-react';
-import { NavLink } from 'react-router-dom';
+import WrapNavLink from './WrapNavLink';
 
 const TopMenu = () => {
 	return (
 		<Menu>
-			<Menu.Item content="На главную" as={NavLink} exact to="/" activeClassName="active" />
-			<Menu.Item content="Новости" as={NavLink} to="/news" activeClassName="active" />
-			<Menu.Item content="Профиль" as={NavLink} to="/profile" activeClassName="active" />
-			<Menu.Item content="Логин" as={NavLink} to="/login" activeClassName="active" position="right" />
+			<Menu.Item content="На главную" as={WrapNavLink} exact to="/" />
+			<Menu.Item content="Новости" as={WrapNavLink} to="/news" />
+			<Menu.Item content="Профиль" as={WrapNavLink} to="/profile" />
+			<Menu.Item content="Логин" as={WrapNavLink} to="/login" position="right" />
 		</Menu>
 	);
 };
