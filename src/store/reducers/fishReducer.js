@@ -1,3 +1,17 @@
-export const FISH = 'FISH';
+import { FISH } from '../actions/fishActions';
 
-export const fish = () => ({ type: FISH, payload: 'aaaa' });
+const initialState = {
+	fish: null,
+};
+
+export default (state = initialState, action) => {
+	switch (action.type) {
+		case FISH:
+			return {
+				...state,
+				fish: action.payload + '??/??',
+			};
+		default:
+			return state;
+	}
+};

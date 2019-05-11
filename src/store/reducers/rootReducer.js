@@ -1,4 +1,4 @@
 import { combineReducers } from 'redux';
-import loginReducer from './loginReducer';
+import fishReducer from './fishReducer';
 
 export default combineReducers({ fish:fishReducer});
