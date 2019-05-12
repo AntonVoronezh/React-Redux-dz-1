@@ -3,7 +3,9 @@ import { setInStorage, getInStorage } from '../../helpers/localStorage/localStor
 
 import { TRY_LOGIN, LOGOUT } from '../actions/loginActions';
 
-
+const initialState = {
+	isLogged: getInStorage('isLogged') || false,
+};
 
 export default (state = initialState, action) => {
 	switch (action.type) {
