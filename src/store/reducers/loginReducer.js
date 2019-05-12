@@ -25,7 +25,14 @@ export default (state = initialState, action) => {
 			}
 		}
 
+		case LOGOUT: {
+			setInStorage('isLogged', false);
 
+			return {
+				...state,
+				isLogged: getInStorage('isLogged'),
+			};
+		}
 
 		default:
 			return state;
