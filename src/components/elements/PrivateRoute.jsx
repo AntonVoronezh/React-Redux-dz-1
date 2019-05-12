@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Route, Redirect } from 'react-router-dom';
 
 const PrivateRoute = ({ user, component: Component, ...rest }) => {
-	
+	return <Route {...rest}  />;
 };
 
 export default PrivateRoute;
