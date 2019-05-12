@@ -9,7 +9,16 @@ const initialState = {
 
 export default (state = initialState, action) => {
 	switch (action.type) {
+		case TRY_LOGIN: {
+			const loginFlag = login({
+				login: action.payload.login,
+				password: action.payload.password,
+			});
 
+			setInStorage('isLogged', loginFlag);
+
+
+		}
 
 
 
