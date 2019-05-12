@@ -17,7 +17,12 @@ export default (state = initialState, action) => {
 
 			setInStorage('isLogged', loginFlag);
 
-
+			return loginFlag ? {
+				isLogged: getInStorage('isLogged'),
+			} : {
+				isLogged: getInStorage('isLogged'),
+				error: true
+			}
 		}
 
 
