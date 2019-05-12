@@ -1,29 +1,38 @@
-import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import React from 'react';
+import { Route, Switch, withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+import PrivateRoute from './components/elements/PrivateRoute.jsx';
 import './App.css';
 import TopMenu from './components/elements/TopMenu.jsx';
 import Main from './components/pages/Main';
 import News from './components/pages/News';
 import Profile from './components/pages/Profile';
-import Login from './components/pages/Login';
+import Login from './containers/pages/Login';
+import Logout from './containers/pages/Logout';
 import Notfound from './components/pages/Notfound';
 
-class App extends Component {
-	render() {
-		return (
-			<div className="App">
-				<TopMenu />
+const App = ({isLogged, history}) => {
 
-				<Switch>
-					<Route exact path="/" component={Main} />
-					<Route path="/news" component={News} />
-					<Route path="/profile" component={Profile} />
-					<Route path="/login" component={Login} />
-					<Route component={Notfound} />
-				</Switch>
-			</div>
-		);
-	}
-}
+	return (
+		<div className="App">
+			<TopMenu user={isLogged} />
 
-export default App;
+			<Switch>
+				<Route exact path="/" component={Main} />
+				<Route path="/news" component={News} />
+				<PrivateRoute path="/profile" component={Profile} user={isLogged} />
+				<Route path="/login" render={() => <Login redirect={() => history.push('/profile')}/>} />
+				<Route path="/logout" render={() => <Logout redirect={() => history.push('/')} />} />
+				<Route component={Notfound} />
+			</Switch>
+		</div>
+	);
+};
+
+const mapStateToProps = ({ login }) => {
+	return {
+		isLogged: login.isLogged,
+	};
+};
+
+export default connect(mapStateToProps)(withRouter(App));
