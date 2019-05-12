@@ -1,12 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Logout = () => {
-	return <div>Logout</div>;
-};
+class Logout extends React.Component {
+	componentWillMount() {
+        this.props.redirect('/');
+        this.props.logoutCB();
+	}
+
+	render() {
+		return null;
+	}
+}
 
 export default Logout;
 
 Logout.propTypes = {
-    name: PropTypes.string
-  };
+	redirect: PropTypes.func.isRequired,
+	logoutCB: PropTypes.func.isRequired,
+};
