@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
-import fishReducer from './fishReducer';
+import loginFormReducer from './loginFormReducer';
+import loginReducer from './loginReducer';
 
-export default combineReducers({ fish:fishReducer});
+export default combineReducers({ loginForm: loginFormReducer, login: loginReducer });
