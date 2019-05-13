@@ -10,7 +10,11 @@ const OneNews = ({ urlToImage, title, description }) => {
 					<Card.Content>
 						<Feed >
 							<Feed.Event>
-
+								<Feed.Label image={urlToImage} style={{width:'100px'}}/>
+								<Feed.Content>
+									<Feed.Summary>{description}</Feed.Summary>
+                                    <Feed.Date content={title} />
+								</Feed.Content>
 							</Feed.Event>
 						</Feed>
 					</Card.Content>
