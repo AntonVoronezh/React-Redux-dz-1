@@ -22,7 +22,11 @@ export default (state = initialState, action) => {
 				...state,
 				usernameText: state.usernameText.substr(0, state.usernameText.length - 1),
 			};
-
+		case PASSWORD_BACKSPACE:
+			return {
+				...state,
+				passwordText: state.passwordText.substr(0, state.passwordText.length - 1),
+			};
 
 		default:
 			return state;
