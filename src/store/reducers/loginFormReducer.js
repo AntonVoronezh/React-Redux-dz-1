@@ -7,6 +7,11 @@ const initialState = {
 
 export default (state = initialState, action) => {
 	switch (action.type) {
+		case USERNAME_TEXT:
+			return {
+				...state,
+				usernameText: action.payload !== null ? state.usernameText + action.payload : state.usernameText,
+			};
 
 
 
