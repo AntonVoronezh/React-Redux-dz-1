@@ -22,4 +22,8 @@ const OneNews = ({ urlToImage, title, description }) => {
 
 export default OneNews;
 
-
+OneNews.propTypes = {
+	urlToImage: PropTypes.string.isRequired,
+	description: PropTypes.string.isRequired,
+	title: PropTypes.string.isRequired,
+};
