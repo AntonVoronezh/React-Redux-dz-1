@@ -19,7 +19,12 @@ export default (state = initialState, action) => {
 				isLoading: false,
 				news: action.payload,
 			};
-
+		case NEWS_FAILURE:
+			return {
+				...state,
+				isLoading: false,
+				error: action.payload
+			};
 		default:
 			return state;
 	}
