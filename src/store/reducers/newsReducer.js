@@ -13,6 +13,12 @@ export default (state = initialState, action) => {
 				...state,
 				isLoading: true,
 			};
+		case NEWS_SUCCESS:
+			return {
+				...state,
+				isLoading: false,
+				news: action.payload,
+			};
 
 		default:
 			return state;
