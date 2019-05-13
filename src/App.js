@@ -5,14 +5,13 @@ import PrivateRoute from './components/elements/PrivateRoute.jsx';
 import './App.css';
 import TopMenu from './components/elements/TopMenu.jsx';
 import Main from './components/pages/Main';
-import News from './components/pages/News';
+import News from './containers/pages/News';
 import Profile from './components/pages/Profile';
 import Login from './containers/pages/Login';
 import Logout from './containers/pages/Logout';
 import Notfound from './components/pages/Notfound';
 
-const App = ({isLogged, history}) => {
-
+const App = ({ isLogged, history }) => {
 	return (
 		<div className="App">
 			<TopMenu user={isLogged} />
@@ -21,7 +20,7 @@ const App = ({isLogged, history}) => {
 				<Route exact path="/" component={Main} />
 				<Route path="/news" component={News} />
 				<PrivateRoute path="/profile" component={Profile} user={isLogged} />
-				<Route path="/login" render={() => <Login redirect={() => history.push('/profile')}/>} />
+				<Route path="/login" render={() => <Login redirect={() => history.push('/profile')} />} />
 				<Route path="/logout" render={() => <Logout redirect={() => history.push('/')} />} />
 				<Route component={Notfound} />
 			</Switch>
