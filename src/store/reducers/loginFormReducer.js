@@ -12,6 +12,11 @@ export default (state = initialState, action) => {
 				...state,
 				usernameText: action.payload !== null ? state.usernameText + action.payload : state.usernameText,
 			};
+		case PASSWORD_TEXT:
+			return {
+				...state,
+				passwordText: action.payload !== null ? state.passwordText + action.payload : state.passwordText,
+			};
 
 
 
