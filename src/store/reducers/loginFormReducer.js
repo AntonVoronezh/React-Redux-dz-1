@@ -17,7 +17,11 @@ export default (state = initialState, action) => {
 				...state,
 				passwordText: action.payload !== null ? state.passwordText + action.payload : state.passwordText,
 			};
-
+		case USERNAME_BACKSPACE:
+			return {
+				...state,
+				usernameText: state.usernameText.substr(0, state.usernameText.length - 1),
+			};
 
 
 		default:
