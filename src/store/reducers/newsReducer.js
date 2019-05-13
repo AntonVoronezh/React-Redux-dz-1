@@ -8,6 +8,11 @@ const initialState = {
 
 export default (state = initialState, action) => {
 	switch (action.type) {
+		case NEWS_REQUEST:
+			return {
+				...state,
+				isLoading: true,
+			};
 
 		default:
 			return state;
