@@ -22,7 +22,9 @@ const fetchNews = () => async dispatch => {
 	try {
 		const responce = await getNews();
 		dispatch(newsSuccessAC((responce.data.articles)));
-	} 
+	} catch (err) {
+		dispatch(newsFailureAC(err));
+	}
 };
 
 export default fetchNews;
