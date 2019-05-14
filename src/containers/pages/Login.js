@@ -9,6 +9,13 @@ import {
 
 import { tryLoginAC } from '../../store/actions/loginActions';
 
+const mapStateToProps = state => {
+	return {
+		...state.loginForm,
+		...state.login,
+	};
+};
+
 
 
 export default connect(
