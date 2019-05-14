@@ -19,7 +19,10 @@ const newsRequestAC = () => ({ type: NEWS_REQUEST });
 const fetchNews = () => async dispatch => {
 	dispatch(newsRequestAC());
 
-	
+	try {
+		const responce = await getNews();
+		dispatch(newsSuccessAC((responce.data.articles)));
+	} 
 };
 
 export default fetchNews;
