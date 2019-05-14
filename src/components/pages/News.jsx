@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Loader } from 'semantic-ui-react';
 import OneNews from '../../components/elements/OneNews';
 
+
 const News = ({ isLoading, news, error, ...rest }) => {
 	// message
 	let allNews;

@@ -5,7 +5,7 @@ import WrapNavLink from './WrapNavLink';
 
 const TopMenu = ({ user }) => {
 	return (
-		<Menu>
+		<Menu >
 			<WrapNavLink content="На главную" exact to="/" />
 			<WrapNavLink content="Новости" to="/news" />
 			<WrapNavLink content="Профиль" to="/profile" />
