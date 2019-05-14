@@ -16,6 +16,10 @@ const newsRequestAC = () => ({ type: NEWS_REQUEST });
 // 		.catch(err => dispatch(newsFailureAC(err)));
 // };
 
+const fetchNews = () => async dispatch => {
+	dispatch(newsRequestAC());
 
+	
+};
 
 export default fetchNews;
