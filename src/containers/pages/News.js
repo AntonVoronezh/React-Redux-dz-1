@@ -4,6 +4,18 @@ import News from '../../components/pages/News';
 import getNews from '../../helpers/axios/axios';
 import fetchNews from '../../store/actions/newsActions';
 
+class NewsContainer extends React.Component {
+	componentDidMount() {
+		this.props.fetchNewsCB();
+	}
+	render() {
+		return (
+			<>
+				<News {...this.props} />
+			</>
+		);
+	}
+}
 
 
 
