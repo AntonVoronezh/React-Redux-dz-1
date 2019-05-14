@@ -17,6 +17,11 @@ class NewsContainer extends React.Component {
 	}
 }
 
+const mapStateToProps = ({ news }) => {
+	return {
+		...news,
+	};
+};
 
 
 
