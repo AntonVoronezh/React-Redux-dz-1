@@ -16,7 +16,15 @@ const mapStateToProps = state => {
 	};
 };
 
-
+const mapDispatchToProps = dispatch => {
+	return {
+		usernameTextCB: text => dispatch(usernameTextAC(text)),
+		passwordTextCB: text => dispatch(passwordTextAC(text)),
+		usernameBackspaceCB: () => dispatch(usernameBackspaceAC()),
+		passwordBackspaceCB: () => dispatch(passwordBackspaceAC()),
+		tryLoginCB: user => dispatch(tryLoginAC(user)),
+	};
+};
 
 export default connect(
 	mapStateToProps,
