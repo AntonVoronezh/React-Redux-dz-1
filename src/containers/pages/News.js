@@ -23,7 +23,11 @@ const mapStateToProps = ({ news }) => {
 	};
 };
 
-
+const mapDispatchToProps = dispatch => {
+	return {
+		fetchNewsCB: () => dispatch(fetchNews()),
+	};
+};
 
 export default connect(
 	mapStateToProps,
